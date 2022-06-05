@@ -1,0 +1,1495 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Copy of Aula 7 - Parte II - Tuplas",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MatheusSilvaTorres/Python/blob/main/Tuplas\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IWT9kBSMTj2O"
+      },
+      "source": [
+        "# Parte II - Estruturas de Dados\n",
+        "## Aula 7 - Tuplas\n",
+        "### Linguagem de Programação (Prof. Dr. Henrique Dezani)\n",
+        "Curso de Tecnologia em Análise e Desenvolvimento de Sistemas da Faculdade de Tecnologia de São José do Rio Preto\n",
+        "\n",
+        "Tuples, NamedTuples (struct) and List"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Bu_cUAtKULLJ"
+      },
+      "source": [
+        "## 1. Tuplas (Tuples)\n",
+        "Semelhante às listas, as tuplas são sequências de itens arbitrários. Diferentemente das listas, as tuplas são **imutáveis**, o que significa que você **não** pode adicionar, excluir ou alterar itens após a definição da tupla. Portanto, uma tupla é semelhante a uma lista constante."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "l1X0HXmJ_d2-",
+        "outputId": "62a6f6b7-a2e8-44b4-d749-9f900ccde3ba",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 137
+        }
+      },
+      "source": [
+        "dias_semana = ('Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado')\n",
+        "\n",
+        "for dia in dias_semana:\n",
+        "  print(dia)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Domingo\n",
+            "Segunda-feira\n",
+            "Terça-feira\n",
+            "Quarta-feira\n",
+            "Quinta-feira\n",
+            "Sexta-feira\n",
+            "Sábado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2tn52rUV_vW0",
+        "outputId": "2d560eaa-5316-4568-8747-698148c66927",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 137
+        }
+      },
+      "source": [
+        "for index, dia in enumerate(dias_semana):\n",
+        "  print(index, dia)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0 Domingo\n",
+            "1 Segunda-feira\n",
+            "2 Terça-feira\n",
+            "3 Quarta-feira\n",
+            "4 Quinta-feira\n",
+            "5 Sexta-feira\n",
+            "6 Sábado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "yaWPXjE1AWPL"
+      },
+      "source": [
+        "Como vimos anteriormente, podemos criar uma tupla com **()**.\n",
+        "Uma tupla é composta de zero ou mais elementos, separados por vírgulas e entre parênteses."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0_V9Q70AAGxP"
+      },
+      "source": [
+        "cores = ()"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "wiRAyH_p_7Fk",
+        "outputId": "ba484898-aeb4-4aa8-b28b-0b81759f2f2a",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "print(cores)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "()\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "VuSeCDP5AiB4",
+        "outputId": "0281d844-c304-47de-e7ef-8a1014f4016f",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "type(cores)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "tuple"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "QsXx6jWyAjg8",
+        "outputId": "9053da17-7a68-4789-a4a1-d71a94f1497d",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "type(dias_semana)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "tuple"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "JeoWZmFHBaL0"
+      },
+      "source": [
+        "É importante relembrar que uma tupla pode aceitar qualquer tipo de objeto e estes podem se repetir na tupla. Vejamos um exemplo:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "5ymX-5T7AmH0"
+      },
+      "source": [
+        "lista_de_objetos = (1, 'texto', 2.3, True, 1, None, [])"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0QuYDt8rB3mT",
+        "outputId": "4bba8769-c25d-4d97-abf6-38faebac025e",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 137
+        }
+      },
+      "source": [
+        "for item in lista_de_objetos:\n",
+        "  print(item, type(item))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "1 <class 'int'>\n",
+            "texto <class 'str'>\n",
+            "2.3 <class 'float'>\n",
+            "True <class 'bool'>\n",
+            "1 <class 'int'>\n",
+            "None <class 'NoneType'>\n",
+            "[] <class 'list'>\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "VoIMpPLXCPZa"
+      },
+      "source": [
+        "Geralmente, você pode usar tuplas no lugar de listas, mas elas têm muito menos funções - não há append(), insert() e assim por diante - porque não podem ser modificadas após a criação (são imutáveis).\n",
+        "Veja quais são as vantagens de se utilizar as tuplas então:\n",
+        "- As tuplas usam menos espaço.\n",
+        "- Você não pode apagar ou modificar itens da tupla por engano.\n",
+        "- Tuplas nomeadas podem ser uma alternativa simples aos objetos.\n",
+        "- Os argumentos das funções (estudaremos em aulas posteriores) são passados como tuplas."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KTDbSLABC78p"
+      },
+      "source": [
+        "### 1.1. Convertendo outros tipos de dados para tupla\n",
+        "A lista é uma das principais estruturas de dados utilizadas nos programas de computadores, portanto, é importante estudarmos como converter outros tipos de dados para listas. Vejamos aluns exemplos:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "4v09Dh6-B9Sf",
+        "outputId": "a6a23b18-bceb-4c89-8eba-533a9d6f725a",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "# Podemos utilizar a a função interna list() para converter uma string para uma lista de string (caracteres):\n",
+        "tuple('Fatec')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "('F', 'a', 't', 'e', 'c')"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Dp09pcJ4vKCf",
+        "outputId": "c34dece0-2c61-4a99-8156-d753cd8ebb85",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "lista = ['Azul', 'Verde', 'Amarelo', 'Branco']\n",
+        "tuple(lista)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "('Azul', 'Verde', 'Amarelo', 'Branco')"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "zZOIy3L4HVv8"
+      },
+      "source": [
+        "### 1.2. Obter um item usando [offset]\n",
+        "Como nas `strings`, você pode extrair um único valor de uma lista, especificando seu índice (offset, ou deslocamento). Veja o exemplo:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "l2I0kijlDtbV",
+        "outputId": "8bef1014-71c9-4426-81e8-fce2f3dc0098",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 137
+        }
+      },
+      "source": [
+        "for index, dia in enumerate(dias_semana):\n",
+        "  print(index, dia)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0 Domingo\n",
+            "1 Segunda-feira\n",
+            "2 Terça-feira\n",
+            "3 Quarta-feira\n",
+            "4 Quinta-feira\n",
+            "5 Sexta-feira\n",
+            "6 Sábado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JcoXKUfjHogq",
+        "outputId": "e4f1670f-0b5a-44e4-d75e-bbee5ece750c",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "dias_semana[2]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Terça-feira'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 12
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Ew3z_zCZHxrc"
+      },
+      "source": [
+        "Podemos utilizar índices negativos, os quais realizam a contagem para trás a partir do final. Veja o exemplo. (Detalhe, podemos fazer a mesma coisa com string)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "H6G4rVGIHsU2",
+        "outputId": "733bf6cd-c4fa-4244-f1cc-20dbbcfdb8e9",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "dias_semana[-1]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Sábado'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "T2szWgW1IBTx",
+        "outputId": "7a943be3-60e8-4ccb-ba7d-e5f26c52eca2",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "dias_semana[-7]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Domingo'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 14
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "-d33y5fI2wjE"
+      },
+      "source": [
+        "### 1.3. Obter uma fatia para extrair itens por intervalo de deslocamento\n",
+        "\n",
+        "Você pode extrair uma subsequência de uma lista usando uma fatia (slice):"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "mdoE6Zsc22bd",
+        "outputId": "21d3b2b2-0e11-4b10-bdbb-4592068a1492",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "coordenadores = ('Adriano', 'Ducatti', 'Sérgio')\n",
+        "\n",
+        "for index, coordenador in enumerate(coordenadores):\n",
+        "  print(index, coordenador)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0 Adriano\n",
+            "1 Ducatti\n",
+            "2 Sérgio\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "IHirBUNNLCFH",
+        "outputId": "f62806af-4bba-44f9-ffad-c3218d16c190",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "# neste caso, definimos o início e o intervalo final (-1)\n",
+        "# Uma fatia de uma lista também é uma lista. \n",
+        "coordenadores[0:2]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "('Adriano', 'Ducatti')"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 16
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZLfKzkkC3U4q",
+        "outputId": "201e6cb7-a7b2-46f4-e187-38cc45b95543",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "# Neste exemplo começa no início e vai para a direita de 2 em 2:\n",
+        "coordenadores[::2]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "('Adriano', 'Sérgio')"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "K28usiP23DwC",
+        "outputId": "ee57b450-f8c9-4e78-c148-63a1deebc3f4",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "# Aqui, começamos no final e vamos à esquerda de 1 em 1, ou seja, reverter a lista:\n",
+        "coordenadores[::-1]"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "('Sérgio', 'Ducatti', 'Adriano')"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 18
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZlWprq4sAW-T"
+      },
+      "source": [
+        "### 1.4. Encontrar o deslocamento de um item por valor com `index()`\n",
+        "\n",
+        "Se você deseja conhecer o deslocamento de um item em uma lista por seu valor, use index(), como no exemplo abaixo:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "UKJUvyqN-9pR",
+        "outputId": "b97116de-82c2-4dbf-ffbc-6db6dd69e762",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "coordenadores.index('Sérgio')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "2"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "539F92KOAv80"
+      },
+      "source": [
+        "### 1.5. Testar um valor com `in`\n",
+        "\n",
+        "A maneira Pythonic de verificar a existência de um valor em uma lista é bem simples. Veja no exemplo abaixo, e note que o mesmo valor pode estar em mais de uma posição na lista, portanto, enquanto estiver lá pelo menos uma vez, retornará True:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "z_ngVZK1ApKU",
+        "outputId": "ad6c6b7a-ed55-4089-edfa-17b0515eca78",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "'Sérgio' in coordenadores"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 20
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Jxwz2rPNBPIt",
+        "outputId": "95c0f2a8-05d8-440d-d1bf-b83ad28acfae",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "'Henrique' in coordenadores"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "False"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 21
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "vaOqc-1qBkrv"
+      },
+      "source": [
+        "### 1.6. Contar ocorrências de um valor usando count ()\n",
+        "\n",
+        " Para contar quantas vezes um valor específico ocorre em uma lista, basta usar a função `count()`. Veja os exemplos abaixo:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "CxumSfUbBWdB",
+        "outputId": "7c8e2831-7d7c-43e4-dcb1-7433deee22e4",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "coordenadores.count('Sérgio')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "1"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 22
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2mbAjEOOCiAo",
+        "outputId": "7b09ad89-1534-4ec4-edd3-fc1a3089f5ab",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "coordenadores.count('Henrique')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "B-zYBnCHCso0"
+      },
+      "source": [
+        "### 1.7. Obter comprimento da lista usando `len()`\n",
+        "\n",
+        "Enquanto count() verifica a quantidade de ocorrência de um deteminado item dentro da lista, a função len() retorna o número de itens em uma lista. Veja o exemplo:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_u6UM47MCmkE",
+        "outputId": "a99df024-ba0b-4263-b4a2-0e422369fef3",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "len(coordenadores)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "3"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 24
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "OcIxJssSdViS",
+        "outputId": "7127b473-1139-4371-c0ed-c2ad21f2f83e",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 164
+        }
+      },
+      "source": [
+        "coordenadores[2] = 'Ademar'"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-25-fdd274621742>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mcoordenadores\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m2\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m'Ademar'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m: 'tuple' object does not support item assignment"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "LPW2i2xpE61L"
+      },
+      "source": [
+        "### 1.8. Reordenar itens com `sorted()`\n",
+        "\n",
+        "Você geralmente precisará classificar os itens em uma lista por seus valores, e não por suas compensações. O Python fornece uma função apenas para tuplas:\n",
+        "- A função geral sorted() retorna uma cópia classificada da tupla (**no formato de lista)**.\n",
+        "\n",
+        "Se os itens da lista forem numéricos, serão classificados por padrão em ordem numérica crescente. Se forem strings, serão classificados em ordem alfabética."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ces0XD7GC_Xh",
+        "outputId": "347a48fd-895f-4a93-f114-ed992fe7db80",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "tupla_numeros = (1, 5, 2, 8, 12, 0)\n",
+        "lista_numeros_ordenada = sorted(tupla_numeros)\n",
+        "\n",
+        "print(tupla_numeros)\n",
+        "print(lista_numeros_ordenada)\n",
+        "print(tuple(lista_numeros_ordenada[::-1]))\n",
+        "\n",
+        "#TODO: obter um tupla com os valores ordenados de maneira decrescente."
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "(1, 5, 2, 8, 12, 0)\n",
+            "[0, 1, 2, 5, 8, 12]\n",
+            "(12, 8, 5, 2, 1, 0)\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "b7GjLfFEkBnx"
+      },
+      "source": [
+        "# 2. Exercícios"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "z8b_A0o8kJdG"
+      },
+      "source": [
+        "### 2.1. Faça um programa que crie uma tupla com 9 números inteiros, compute e mostre os números primos e suas respectivas posições."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "PnEjimxkj8-6",
+        "outputId": "6b1b01af-4884-4642-f681-b90017c8452c",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "numeros = (10, 12, 5, 2, 8, 4, 15, 13, 6)\n",
+        "\n",
+        "for index, numero in enumerate(numeros):\n",
+        "  n=1\n",
+        "  divisivel=0\n",
+        "  while n<=numero:\n",
+        "    if numero%n == 0:\n",
+        "      divisivel+=1\n",
+        "    n+=1\n",
+        "  if divisivel>2 or numeros==0:\n",
+        "    continue\n",
+        "  else:print(index,numero)\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "2 5\n",
+            "3 2\n",
+            "7 13\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0ZJohsInlGpi"
+      },
+      "source": [
+        "### 2.2. Faça um programa que carregue duas tuplas com nomes de alimentos, com 3 posições cada tupla. Em seguida, crie uma lista resultante da intercalação dessas duas tuplas. No final, mostre os itens dessa nova tupla."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "59EIfLTUli-x",
+        "outputId": "f79b0c77-e1c6-4128-8135-165f79b62232",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "tupla1=('beterraba','cenoura','banana')\n",
+        "tupla2=('picanha','contra filé','fraldinha')\n",
+        "lista_intercalada=[]\n",
+        "for i in range(3):\n",
+        "  lista_intercalada.append(tupla1[i])\n",
+        "  lista_intercalada.append(tupla2[i])\n",
+        "print(tuple(lista_intercalada))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "('beterraba', 'picanha', 'cenoura', 'contra filé', 'banana', 'fraldinha')\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "g-vflqTtm0l-"
+      },
+      "source": [
+        "### 2.3. Faça um programa que carregue uma tupla com 5 números inteiros. Em seguida, crie e mostre uma tupla resultante ordenada de maneira crescente e crie e mostre uma tupla resultante ordenada de maneira decrescente."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "nPcjo4M7nPFK",
+        "outputId": "b6afbfb9-3cb3-4867-c075-393d35308257",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "tupla = (29, 17, 13, 50, 30)\n",
+        "\n",
+        "tupla_crescente = sorted(tupla, key=int)\n",
+        "\n",
+        "print(tuple(tupla_crescente))\n",
+        "\n",
+        "tupla_decrescente = sorted(tupla, key=int, reverse=True)\n",
+        "\n",
+        "print(tuple(tupla_decrescente))\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "(13, 17, 29, 30, 50)\n",
+            "(50, 30, 29, 17, 13)\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "3ZhZrnSkmu-D"
+      },
+      "source": [
+        "### 2.4. Crie um programa que tenha uma tupla totalmente preenchida com uma contagem por extenso, de zero, até vinte. O programa deverá ler um número pelo teclado (entre 0 e 20) e mostrá-lo por extenso."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "TdGepRrwnBgf",
+        "outputId": "8e17275d-1e1d-49b1-ad48-06cf0cbfd879",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "extenso = ('zero','um','dois','tres','quatro','cinco')\n",
+        "numero = int(input(\"Digite um numero de zero a cinco: \"))\n",
+        "print(extenso[numero])"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Digite um numero de zero a cinco: 3\n",
+            "tres\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tupla = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco',\n",
+        "         'seis', 'sete', 'oito', 'nove', 'dez', 'onze',\n",
+        "         'doze', 'treze', 'catorze', 'quinze', 'dezesseis',\n",
+        "         'dezessete', 'dezoito', 'dezenove', 'vinte')\n",
+        "while True:\n",
+        "    while True:\n",
+        "        numero = int(input('Digite um número entre 0 e 20: '))\n",
+        "        if 0 <= numero <= 20:\n",
+        "            break\n",
+        "        print('Tente novamente.', end=' ')\n",
+        "    print(f'você digitou o número {tupla[numero]}')\n",
+        "    resp = str(input('Deseja continuar [S/N]')).strip().upper()[0]\n",
+        "    if resp == 'N':\n",
+        "        break"
+      ],
+      "metadata": {
+        "id": "jPVm0MMHqWax"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "rcl_MofznoEw"
+      },
+      "source": [
+        "### 2.5. Crie uma tupla com os 20 primeiros colocados da Tabela do Campeonato Brasileiro de Futebol, na ordem de colocação. Depois, mostre:\n",
+        "\n",
+        "- Apenas os 5 primeiros colocados\n",
+        "- Os 4 últimos colocados na tabela\n",
+        "- Uma lista com os times em ordem alfabética\n",
+        "- Em que posição na tabela está o time do São Paulo.\n",
+        "\n",
+        "Dica: Procure por \"Tabela Campeonato Brasileiro de Futebol\" no Google.\n",
+        "\n",
+        "![Tabela Campeonato Brasileiro de Futebol 2019](https://firebasestorage.googleapis.com/v0/b/aulas-python-2019.appspot.com/o/Screen%20Shot%202019-09-30%20at%2011.46.16.png?alt=media&token=f74952af-7909-4042-8032-dc352a74393f)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "UqSXl8ALoHV1",
+        "outputId": "70546bb9-9ca6-41d1-daba-303fbaf810d8",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 106
+        }
+      },
+      "source": [
+        "times = ('Flamengo', 'Palmeiras', 'Santos', 'Corinthians', 'Internacional', 'São Paulo', 'Grêmio', 'Bahia', 'Athletico-PR', 'Atlético Mineiro', 'Botafogo', 'Goiás', 'Vasco da Gama', 'Ceará', 'Fortaleza', 'Fluminense', 'Cruzeiro', 'CSA', 'Avaí', 'Chapecoense')\n",
+        "print(times[0:5])\n",
+        "print(times[-4::1])\n",
+        "print(sorted(times))\n",
+        "print(times.index('São Paulo')+1)\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "('Flamengo', 'Palmeiras', 'Santos', 'Corinthians', 'Internacional')\n",
+            "('Cruzeiro', 'CSA', 'Avaí', 'Chapecoense')\n",
+            "['Athletico-PR', 'Atlético Mineiro', 'Avaí', 'Bahia', 'Botafogo', 'CSA', 'Ceará', 'Chapecoense', 'Corinthians', 'Cruzeiro', 'Flamengo', 'Fluminense', 'Fortaleza', 'Goiás', 'Grêmio', 'Internacional', 'Palmeiras', 'Santos', 'São Paulo', 'Vasco da Gama']\n",
+            "6\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "times = ('Flamengo', 'Palmeiras', 'Santos', 'Corinthians', 'Internacional',\n",
+        "         'São Paulo', 'Grêmio', 'Bahia', 'Athletico-PR', 'Atlético Mineiro',\n",
+        "         'Botafogo', 'Goiás', 'Vasco da Gama', 'Ceará', 'Fortaleza',\n",
+        "         'Fluminense', 'Cruzeiro', 'CSA', 'Avaí', 'Chapecoense')\n",
+        "print(f'Os cinco primeiros são :{times[0:5]}')\n",
+        "# print(f'Os quatro ultimos são :{times[16:20]}')\n",
+        "print(f'Os quatro ultimos são :{times[-4:]}')\n",
+        "print(f'A ordem alfabetica é: {sorted(times)}')\n",
+        "print(f'O time chapecoense está na {times.index(\"Chapecoense\") + 1}ª posição')"
+      ],
+      "metadata": {
+        "id": "aQ5qKZZXqf8z"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "-XFyXhQOpvxD"
+      },
+      "source": [
+        "### 2.6. Faça um programa que leia quatro números pelo teclado e guarde-os em uma tupla. Em seguida, mostre:\n",
+        "\n",
+        "- Quantas vezes apareceu o número 9.\n",
+        "- Em que posição foi digitado o primeiro valor 3.\n",
+        "- Quais foram os números pares."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "zJkhcfzgqC22",
+        "outputId": "67d12287-31fb-48b5-fa8a-bd06691aafe7",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "tupla = (int(input('Digite um número: ')),\n",
+        "int(input('Digite outro número: ')),\n",
+        "int(input('Digite mais um número: ')),\n",
+        "int(input('Digite o ultimo número: ')))\n",
+        "print(f'O valor 9 apareceu  {tupla.count(9)} vezes')\n",
+        "print(f'o primeiro valor 3 foi digitado na posição {tupla.index(3) + 1}ª' if 3 in tupla\n",
+        "      else 'O valor 3 não foi digitado em nenhuma posição')\n",
+        "print(f'Os valores pares digitados foram: ', end=' ')\n",
+        "for n in tupla:\n",
+        "    if n % 2 == 0:\n",
+        "        print(n, end=' ')\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite um número: 5\n",
+            "Digite outro número: 9\n",
+            "Digite mais um número: 3\n",
+            "Digite o ultimo número: 3\n",
+            "O valor 9 apareceu  1 vezes\n",
+            "o primeiro valor 3 foi gigitado na posição 3ª\n",
+            "Os valores pares digitados foram:  "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2fosoXSb7dOr",
+        "outputId": "f7b6274a-9a58-4330-c409-dbc77e431871",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 137
+        }
+      },
+      "source": [
+        "numeros = []\n",
+        "pares=list()\n",
+        "for i in range(4):\n",
+        "  numero = int(input('Digite o número: '))\n",
+        "  numeros.append(numero)\n",
+        "  \n",
+        "  if numero%2==0:\n",
+        "    pares.append(numero)\n",
+        "  \n",
+        "tupla = tuple(numeros)\n",
+        "\n",
+        "print(tupla.count(9))\n",
+        "if 3 in tupla:\n",
+        "  print(tupla.index(3))\n",
+        "else:\n",
+        "  print(0)\n",
+        "print(tuple(pares))\n",
+        "\n",
+        "\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Digite o número: 9\n",
+            "Digite o número: 8\n",
+            "Digite o número: 7\n",
+            "Digite o número: 6\n",
+            "1\n",
+            "0\n",
+            "(8, 6)\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "i9p5IeKlqDWf"
+      },
+      "source": [
+        "### 2.7. Faça um programa que contenha uma tupla com diversas palavras. Para cada palavra, mostre suas vogais no seguinte formato: 'A palavra Fatec contém as vogais a e'."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "O80Gb0XasoaZ",
+        "outputId": "67f3d2b8-1d0f-4c77-ba4b-884c030785b7",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "tupla = (\"mesa\", \"cadeira\")\n",
+        "for c in tupla:\n",
+        "  tupla2 = tuple(c)\n",
+        "  vogais = \"\"\n",
+        "  for i in tupla2:\n",
+        "    if i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u':\n",
+        "      vogais = vogais + i + \", \"\n",
+        "  print(\"A palavra\", c, \"contém as vogais: \", vogais)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "A palavra mesa contém as vogais:  e, a, \n",
+            "A palavra cadeira contém as vogais:  a, e, i, a, \n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Z5rM7imH-i3x",
+        "outputId": "30a93995-4c71-4a84-fc51-fd3559eb6b5d",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "tupla = ('mesa', 'cadeira')\n",
+        "\n",
+        "for palavra in tupla:\n",
+        "  print('\\nA palavra {} contém as vogais: '.format(palavra), end='')\n",
+        "  for letra in palavra:\n",
+        "    if letra in 'aeiou':\n",
+        "      print(letra, end=' ')\n",
+        "      "
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\n",
+            "A palavra mesa contém as vogais: e a \n",
+            "A palavra cadeira contém as vogais: a e i a "
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 074: Crie um programa que vai gerar cinco números aleatórios e colocar em uma tupla. Depois disso, mostre a listagem de números gerados e também indique o menor e o maior valor que estão na tupla."
+      ],
+      "metadata": {
+        "id": "VP_jGMDirTtA"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from random import randint\n",
+        "tupla = (randint(0, 10), randint(0, 10), randint(0, 10), randint(0, 10), randint(0, 10))\n",
+        "print(tupla)\n",
+        "print(f'O maior valor sorteado foi {max(tupla)}')\n",
+        "print(f'O menor valor sorteado foi {min(tupla)}')"
+      ],
+      "metadata": {
+        "id": "Nd9sr6J2rcPx"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 076: Crie um programa que tenha uma tupla única com nomes de produtos e seus respectivos preços, na sequência. No final, mostre uma listagem de preços, organizando os dados em forma tabular."
+      ],
+      "metadata": {
+        "id": "WEfSia-0rxUo"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('=' * 40)\n",
+        "print('{:^40}'.format('Listagem de compras'))\n",
+        "print('=' * 40)\n",
+        "listagem = ('Arroz', 5, 'Feijão', 8, 'Pão', 1, 'Pizza', 15, 'carne', 30, 'ovo', 5, 'bombom', 12)\n",
+        "for pos in range(0, len(listagem)):\n",
+        "    if pos % 2 == 0:\n",
+        "        print(f'{listagem[pos]:.<30}', end=' ') #:30 não foi usado, mas mostra a variavel com 30 caracteres\n",
+        "    else:\n",
+        "        print(f'R${listagem[pos]:>5.2f}') # alinha para direita em 5 posições e deixa as casas decimais certas"
+      ],
+      "metadata": {
+        "id": "_ByMGppZrrqK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 077: Crie um programa que tenha uma tupla com várias palavras (não usar acentos). Depois disso, você deve mostrar, para cada palavra, quais são as suas vogais."
+      ],
+      "metadata": {
+        "id": "vIzth2iOsDCB"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "palavras = ('APRENDER', 'PROGRAMAR', 'LINGUAGUEM', 'PYTHON', 'CURSO',\n",
+        "            'GRATIS', 'ESTUDAR', 'PRATICAR', 'TRABALHAR', 'MERCADO', 'PROGRAMADOR', 'FUTURO')\n",
+        "vogais = ('A', 'E', 'I', 'O', 'U')\n",
+        "for p in palavras:\n",
+        "    print(f'\\nNa palavra {p.lower()} temos as vogais: ', end=' ')\n",
+        "    for letra in p:\n",
+        "        if letra.lower() in 'aeiou':\n",
+        "            print(letra, end=' ')"
+      ],
+      "metadata": {
+        "id": "x3xIinvir-e7"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Alguns testes curso em video"
+      ],
+      "metadata": {
+        "id": "Wd2ktVvwrNBR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lanche = ('Hamburguer', 'Suco', 'Pizza', 'Pudim')\n",
+        "# lanche = 'Hamburguer', 'Suco', 'Pizza', 'Pudim' funciona do mesmo jeito\n",
+        "# print(lanche)\n",
+        "# print(lanche[1])\n",
+        "# print(lanche[3])\n",
+        "# print(lanche[-2])\n",
+        "# print(lanche[-2:])\n",
+        "# print(lanche[1:3])\n",
+        "# print(lanche[::-1])\n",
+        "# print(lanche[0:2])\n",
+        "# print(lanche[0::2])\n",
+        "# print(lanche[:2])\n",
+        "# print(lanche[2:])\n",
+        "'''for c in lanche:\n",
+        "    print(f' Eu vou comer {c}')\n",
+        "print(f'Comi muito!!')\n",
+        "\n",
+        "for pos, c in enumerate(lanche):\n",
+        "    print(f' Eu vou comer {c}, na posição {pos}')\n",
+        "print(f'Comi muito!!')'''\n",
+        "\n",
+        "# for cont in range(0, len(lanche)):\n",
+        "#     print(f' Eu vou comer {lanche[cont]}, na posição {cont}')\n",
+        "#     cont += 1\n",
+        "# print(f'Comi muito!!')\n",
+        "\n",
+        "'''print(sorted(lanche)) # organiza em ordem\n",
+        "print(lanche)\n",
+        "\n",
+        "a = (2, 5, 4)\n",
+        "b = (5, 8, 1, 2)\n",
+        "c = a + b\n",
+        "print(sorted(c))\n",
+        "print(c)\n",
+        "print(c.index(2)) # sem indicação começa da posição 0 \n",
+        "print(c.index(2, 1)) # o um indica que começa a partir da posição 1\n",
+        "print(len(c))\n",
+        "print(c.count(5))'''\n",
+        "\n",
+        "pessoa = ('Matheus', 21, 'M', 70.5) # pode ter tipos de dados diferentes\n",
+        "# del(pessoa) usada para apagar a tupla\n",
+        "print(pessoa)"
+      ],
+      "metadata": {
+        "id": "Qy1OmQ9bppiN"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
