@@ -1,0 +1,2475 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Copy of Aula 02 - Estrutura Condicional.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/MatheusSilvaTorres/Python/blob/main/Estrutura%20Condicional\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IWT9kBSMTj2O"
+      },
+      "source": [
+        "#Aula 2 - Estrutura Condicional\n",
+        "## Linguagem de Programação (Prof. Dr. Henrique Dezani)\n",
+        "Curso de Tecnologia em Análise e Desenvolvimento de Sistemas da Faculdade de Tecnologia de São José do Rio Preto"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "importando modulos! #curso em video"
+      ],
+      "metadata": {
+        "id": "z9mKi-3fYbhi"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "num = int(input('Digite um número: '))\n",
+        "raiz = math.sqrt(num)\n",
+        "print('A raiz de {}, è: {}'.format(num, math.ceil(raiz))) # arredonda a raiz para cima.FLOOR ARREDNONDA PARA BAIXO\n",
+        "print(raiz)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qbEjR1tiZVfi",
+        "outputId": "4a082efa-901f-4d56-a158-ba13d0499620"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite um número: 5\n",
+            "A raiz de 5, è: 3\n",
+            "2.23606797749979\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import sqrt, factorial\n",
+        "num = int(input('Digite um número: '))\n",
+        "print('A raiz de {}, è: {}, seu fatorial: {}'.format(num, sqrt(num), factorial(num)))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ixzfywe2YhRf",
+        "outputId": "255b20d9-67af-41f5-f056-fb0251dc5518"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite um número: 5\n",
+            "A raiz de 5, è: 2.23606797749979, seu fatorial: 120\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "num = random.random() # gera um número flutuante ente 0 e 1\n",
+        "print(num)\n",
+        "num1 = random.randint(1, 10) # gera um número inteiro entre valores selecionados nos ().\n",
+        "print(num1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C7dODhXLZE6t",
+        "outputId": "4d8b3577-264e-4b29-b2c2-79d2a5b49343"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.11192724370741369\n",
+            "4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import emoji\n",
+        "print(emoji.emojize('Python is :thumbs_up:'))\n",
+        "# ir em emoji sheet e copiar um emoji\n",
+        "print(emoji.emojize('Olá, mundo :smile:', use_aliases=True))"
+      ],
+      "metadata": {
+        "id": "pX18gCa8ZMvj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "VYGiQMqkSClj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Tratamento de strings # curso em video"
+      ],
+      "metadata": {
+        "id": "eJ9lnxdeZieF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "frase = 'Curso em Vídeo Python'\n",
+        "# fatiamento\n",
+        "print('index 9: ', frase[9])\n",
+        "print('index 9 até 13: ', frase[9:13])\n",
+        "print('index 6 até 21 pulando de 2 em 2: ', frase[6:21:2]) # index vai até o 20, colocamos 21 pq o ultimo número é desconsiderado\n",
+        "print('começa do ínicio e vai até o 5: ', frase[:5])\n",
+        "print('começa no 5 e vai até o final: ', frase[5:])\n",
+        "print('pega tudo pulando de 2 em 2: ', frase[::2])\n",
+        "#análise\n",
+        "print('tamanho da string: ', len(frase))\n",
+        "print('contador: ', frase.count('o'))\n",
+        "print('contador de 0 ao 13: ', frase.count('o', 0, 13))\n",
+        "print('encontre: ', frase.find('deo'))\n",
+        "print('encontre deo: ', frase.find('deo'))\n",
+        "print('encontre android: ', frase.find('android'))\n",
+        "print('tem a palavra curso em frase: ', 'Curso' in frase)\n",
+        "#transformação\n",
+        "print(frase.replace('Python', 'Android'))\n",
+        "print('frase em maíuscula: ', frase.upper())\n",
+        "print('frase em minúscula: ', frase.lower())\n",
+        "print('frase capitalizada: ', frase.capitalize())\n",
+        "print('frase começando palavras em maíuscula: ', frase.title())\n",
+        "frase01= '   aprenda python   '\n",
+        "print(frase01)\n",
+        "print('tirando os espaços da frase: ', frase01.strip())\n",
+        "print('tirando os espaços a direita da frase: ', frase01.rstrip())\n",
+        "print('tirando os espaços esquerda da frase: ', frase01.lstrip())\n",
+        "#divisão\n",
+        "print('separando a frase pelo espaço: ', frase.split())\n",
+        "frase02 = frase.split()\n",
+        "print(frase02[1])\n",
+        "print(frase02[0][3])\n",
+        "# junção\n",
+        "print('-'.join(frase02))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uRU8l4CCZo5A",
+        "outputId": "9151896e-e8e3-4930-c6cf-e19f1f1f429b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "index 9:  V\n",
+            "index 9 até 13:  Víde\n",
+            "index 6 até 21 pulando de 2 em 2:  e íe yhn\n",
+            "começa do ínicio e vai até o 5:  Curso\n",
+            "começa no 5 e vai até o final:   em Vídeo Python\n",
+            "pega tudo pulando de 2 em 2:  Croe íe yhn\n",
+            "tamanho da string:  21\n",
+            "contador:  3\n",
+            "contador de 0 ao 13:  1\n",
+            "encontre:  11\n",
+            "encontre deo:  11\n",
+            "encontre android:  -1\n",
+            "tem a palavra curso em frase:  True\n",
+            "Curso em Vídeo Android\n",
+            "frase em maíuscula:  CURSO EM VÍDEO PYTHON\n",
+            "frase em minúscula:  curso em vídeo python\n",
+            "frase capitalizada:  Curso em vídeo python\n",
+            "frase começando palavras em maíuscula:  Curso Em Vídeo Python\n",
+            "   aprenda python   \n",
+            "tirando os espaços da frase:  aprenda python\n",
+            "tirando os espaços a direita da frase:     aprenda python\n",
+            "tirando os espaços esquerda da frase:  aprenda python   \n",
+            "separando a frase pelo espaço:  ['Curso', 'em', 'Vídeo', 'Python']\n",
+            "em\n",
+            "s\n",
+            "Curso-em-Vídeo-Python\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ALGUNS EXERCICIOS MODULOS E STRINGS CURSO EM VIDEO"
+      ],
+      "metadata": {
+        "id": "CFKzgBuEb8YF"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 16: Crie um programa que leia um número Real qualquer pelo teclado e mostre na tela a sua porção Inteira"
+      ],
+      "metadata": {
+        "id": "EwdQ65YmW2r7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import trunc\n",
+        "n = float(input('Digite um número quebrado: '))\n",
+        "print('A parte inteira do número é: {}'.format(trunc(n)))\n",
+        "\n",
+        "'''n = float(input('Digite um número quebrado: '))\n",
+        "print('A parte inteira do número é: {}'.format(int(n)))'''"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 70
+        },
+        "id": "HJZcrvxEcFne",
+        "outputId": "67ec00a6-3682-4987-bbab-799a0462891c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite um número quebrado: 4.656\n",
+            "A parte inteira do número é: 4\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "\"n = float(input('Digite um número quebrado: '))\\nprint('A parte inteira do número é: {}'.format(int(n)))\""
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 17: Faça um programa que leia o comprimento do cateto oposto e do cateto adjacente de um triângulo retângulo. Calcule e mostre o comprimento da hipotenusa."
+      ],
+      "metadata": {
+        "id": "7RPuFgPFXDlK"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from math import hypot\n",
+        "catedo_oposto = float(input('Digite o catedo oposto: '))\n",
+        "catedo_adjacente = float(input('Digite o catedo adjacente: '))\n",
+        "hipotenusa = hypot(catedo_oposto, catedo_adjacente)\n",
+        "print('A Hipotenusa é: {:.2f}'.format(hipotenusa))"
+      ],
+      "metadata": {
+        "id": "qnz7FtUdcZM-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 18: Faça um programa que leia um ângulo qualquer e mostre na tela o valor do seno, cosseno e tangente desse ângulo."
+      ],
+      "metadata": {
+        "id": "2tpKe-JIXP6b"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import math\n",
+        "ângulo = float(input('Digite o angulo: '))\n",
+        "print('O seno é: {:.2f} \\n o Cosseno é: {:.2f} \\n e a Tangente é: {:.2f}'.format(math.sin(math.radians(ângulo)),\n",
+        "                                    math.cos(math.radians(ângulo)), math.tan(math.radians(ângulo))))"
+      ],
+      "metadata": {
+        "id": "_A-2OQtcckAd"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 19: Um professor quer sortear um dos seus quatro alunos para apagar o quadro. Faça um programa que ajude ele, lendo o nome dos alunos e escrevendo na tela o nome do escolhido."
+      ],
+      "metadata": {
+        "id": "o9L7FF3sXYpb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "\n",
+        "n1 = str(input('Digite o nome do aluno: '))\n",
+        "n2 = str(input('Digite o nome do aluno: '))\n",
+        "n3 = str(input('Digite o nome do aluno: '))\n",
+        "n4 = str(input('Digite o nome do aluno: '))\n",
+        "lista = [n1, n2, n3, n4]\n",
+        "print('O escolhido é: {}'.format(random.choice(lista)))\n"
+      ],
+      "metadata": {
+        "id": "WEzddIMBcpk8",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "d4eb725d-0193-40e2-ce82-302b7f029404"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o nome do aluno: matheus\n",
+            "Digite o nome do aluno: natacha\n",
+            "Digite o nome do aluno: robinho\n",
+            "Digite o nome do aluno: guanabara\n",
+            "O escolhido é: guanabara\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 20: O mesmo professor do desafio 19 quer sortear a ordem de apresentação de trabalhos dos alunos. Faça um programa que leia o nome dos quatro alunos e mostre a ordem sorteada."
+      ],
+      "metadata": {
+        "id": "Bw6TJIQMXhOS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "\n",
+        "n1 = str(input('Digite o nome do aluno: '))\n",
+        "n2 = str(input('Digite o nome do aluno: '))\n",
+        "n3 = str(input('Digite o nome do aluno: '))\n",
+        "n4 = str(input('Digite o nome do aluno: '))\n",
+        "lista = [n1, n2, n3, n4]\n",
+        "random.shuffle(lista) # embaralhar\n",
+        "print('A lista de apresentação será: ')\n",
+        "print(lista)\n"
+      ],
+      "metadata": {
+        "id": "mzFtW1XgcvQW",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "7ab89916-957b-48dc-ac34-341ac61aa5ba"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o nome do aluno: matheus\n",
+            "Digite o nome do aluno: natacha\n",
+            "Digite o nome do aluno: robinho\n",
+            "Digite o nome do aluno: guanabara\n",
+            "A lista de apresentação será: \n",
+            "['robinho', 'natacha', 'matheus', 'guanabara']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 22: Crie um programa que leia o nome completo de uma pessoa e mostre:\n",
+        "\n",
+        "– O nome com todas as letras maiúsculas e minúsculas.\n",
+        "\n",
+        "– Quantas letras ao todo (sem considerar espaços).\n",
+        "\n",
+        "– Quantas letras tem o primeiro nome."
+      ],
+      "metadata": {
+        "id": "0ooT44KLWxHV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nome = str(input('Digite seu nome: ')).strip()\n",
+        "print('Seu nome em maiúscula é: {} '.format(nome.upper()))\n",
+        "print('Seu nome em minúscula é: {} '.format(nome.lower()))\n",
+        "print('Seu nome ao todo tem {} letras'.format(len(nome) - nome.count(' ')))\n",
+        "# print('Seu primeiro nome tem {} letras'.format(nome.find(' '))) find foi usado para encontrar o primeiro espaço\n",
+        "nome1 = nome.split()\n",
+        "print('Seu primeiro nome é {} e ele tem {} letras'.format(nome1[0], len(nome1[0])))"
+      ],
+      "metadata": {
+        "id": "pbd6HFE0dAI2",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "8ace6727-a44b-4043-b446-fc6e3d82b762"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite seu nome: matheus torres\n",
+            "Seu nome em maiúscula é: MATHEUS TORRES \n",
+            "Seu nome em minúscula é: matheus torres \n",
+            "Seu nome ao todo tem 13 letras\n",
+            "Seu primeiro nome é matheus e ele tem 7 letras\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 23: Faça um programa que leia um número de 0 a 9999 e mostre na tela cada um dos dígitos separados."
+      ],
+      "metadata": {
+        "id": "r1N2eKxbYGS-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num = int(input('Digite um número entre 0 a 9999: '))\n",
+        "u = num // 1 % 10\n",
+        "d = num // 10 % 10\n",
+        "c = num // 100 % 10\n",
+        "m = num // 1000 % 10\n",
+        "print('Analisando o número: {}'.format(num))\n",
+        "print('Unidade: {} \\n Dezena: {} \\n Centena: {} \\n Milhar: {}'.format(u, d, c, m))"
+      ],
+      "metadata": {
+        "id": "At9YUmN1dDvK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 24: Crie um programa que leia o nome de uma cidade diga se ela começa ou não com o nome “SANTO”."
+      ],
+      "metadata": {
+        "id": "k2HkoofPYILL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "cidade = str(input('Em qual cidade você nasceu: ')).strip().capitalize()\n",
+        "print(cidade[0] == 'Santos')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Thbwuo-VXWf5",
+        "outputId": "b3fe3a5d-6da5-444e-9b06-7b1bf3c0b133"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Em qual cidade você nasceu: santos adahu\n",
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "cidade = str(input('Em qual cidade você nasceu: ')).strip().capitalize()\n",
+        "print(cidade[:5] == 'Santo')"
+      ],
+      "metadata": {
+        "id": "yic_kU1WdEcF",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "6e9b1ce2-d656-429b-e9f7-dfe785f4b16d"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Em qual cidade você nasceu: santos new\n",
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 25: Crie um programa que leia o nome de uma pessoa e diga se ela tem “SILVA” no nome"
+      ],
+      "metadata": {
+        "id": "V3ynfrpeYSqx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nome = str(input('Digite seu nome: ')).strip()\n",
+        "print('Possuí Silva no seu nome: {} '. format('SILVA' in nome.upper()))"
+      ],
+      "metadata": {
+        "id": "vbTR2I6gdJK9"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 26: Faça um programa que leia uma frase pelo teclado e mostre quantas vezes aparece a letra “A”, em que posição ela aparece a primeira vez e em que posição ela aparece a última vez."
+      ],
+      "metadata": {
+        "id": "iMDtDHRMYb7d"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nome = str(input('Digite seu nome: ')).strip()\n",
+        "print('Seu nome possui {} letras A.'.format((nome.lower().count('a'))))\n",
+        "print('Primeiro A apareceu na posição: {}'.format(nome.lower().find('a')+1))\n",
+        "print('Ultimo A apareceu na posição: {}'.format(nome.lower().rfind('a')))"
+      ],
+      "metadata": {
+        "id": "SPyIQO6odMee"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 27: Faça um programa que leia o nome completo de uma pessoa, mostrando em seguida o primeiro e o último nome separadamente."
+      ],
+      "metadata": {
+        "id": "xyrWYNjUYn5W"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nome = str(input('Digite seu nome: ')).strip()\n",
+        "nome1 = nome.split()\n",
+        "print('muito prazer em te conhecer!')\n",
+        "print('seu primeiro nome é {}'.format(nome1[0]))\n",
+        "print('seu ultimo nome é {}'.format(nome1[-1]))\n",
+        "#print('seu ultimo nome é {}'.format(nome1[len(nome1)-1]))"
+      ],
+      "metadata": {
+        "id": "fdPEOroOdU4B"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 28: Escreva um programa que faça o computador “pensar” em um número inteiro entre 0 e 5 e peça para o usuário tentar descobrir qual foi o número escolhido pelo computador. O programa deverá escrever na tela se o usuário venceu ou perdeu."
+      ],
+      "metadata": {
+        "id": "h74F3Q6PY5_t"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from time import sleep\n",
+        "from random import randint\n",
+        "num = randint(0, 5)\n",
+        "print('\\33[34m--=--' * 20)\n",
+        "print('\\33[35mVou pensar em um número entre 0 e 5. Tente adivinhar.')\n",
+        "print('\\33[34m --=--' * 20)\n",
+        "escolha = int(input('Em que número pensei: '))\n",
+        "print('\\33[32m PROCESSANDO...')\n",
+        "sleep(3)\n",
+        "if escolha == num:\n",
+        "    print('\\33[32m Você acertou! PARABÉNS')\n",
+        "else:\n",
+        "    print('\\33[31m Eu VENCI pensei no número {} e não no {}'.format(num, escolha))"
+      ],
+      "metadata": {
+        "id": "Yw4pfu0wdZeO"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Exercício Python 32: Faça um programa que leia um ano qualquer e mostre se ele é bissexto."
+      ],
+      "metadata": {
+        "id": "Kyog0FtvY8LC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from datetime import date\n",
+        "print('Vamos verificar anos bissextos!')\n",
+        "ano = int(input('Qual ano deseja verificar?'))\n",
+        "if ano % 4 == 0 and ano % 100 != 0 or ano % 400 == 0:\n",
+        "  print(f'O ano {ano} é bissexto!')\n",
+        "else: \n",
+        "  print(f'O ano {ano} não é bissexto!')"
+      ],
+      "metadata": {
+        "id": "8sy6K4UqZkCe",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "77c45658-2cd8-4a08-8fef-eaffcee75922"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Vamos verificar anos bissextos!\n",
+            "Qual ano deseja verificar?2020\n",
+            "O ano 2020 é bissexto!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from datetime import date\n",
+        "anoAtual = date.today().year\n",
+        "anoNasc = int(input('Digite o ano do seu nascimento: '))\n",
+        "idade = anoAtual - anoNasc\n",
+        "if idade <= 9:\n",
+        "    print('Categotia Mirim')\n",
+        "elif idade <= 14:\n",
+        "    print('Categotia infantil')\n",
+        "elif idade <= 19:\n",
+        "    print('Categotia Junior')\n",
+        "elif idade <= 20:\n",
+        "    print('Categotia Sênior')\n",
+        "else:\n",
+        "    print('Categotia Master')"
+      ],
+      "metadata": {
+        "id": "n4VqZJ2PdkCp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Bu_cUAtKULLJ"
+      },
+      "source": [
+        "## 2.1. Estrutura condicional simples (if/else)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "AJD9xRDWI2tK"
+      },
+      "source": [
+        "Vamos considerar um problema clássico de cálculo de média e a informação se o aluno foi aprovado ou reprovado."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "foKq0c6HJD-4"
+      },
+      "source": [
+        "media = 6.0"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KMZkvKpJViD_"
+      },
+      "source": [
+        "Um  `if` é um comando de decisão que avalia uma expressão e escolhe um bloco para ser executado, de acordo com o resultado dessa avaliação. A expressão, nesse caso, seria se a média é maior ou igual a 6.0, tendo uma variável sendo comparada com o operador de maior ou igual `>=` com um valor **literal** de um inteiro. Vejamos o código a seguir:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "PZcToPcOFFhY",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "81e08a12-f56e-430d-d53e-c7080bfc45fa"
+      },
+      "source": [
+        "if media >= 6.0:\n",
+        "  print('aprovado')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "aprovado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "8Kg_f2wTX8O4"
+      },
+      "source": [
+        "Como pudemos ver no exemplo anterior, um dos operadores de comparação (numérico) é o `>=` (maior ou igual). Outros operadores podem ser vistos na Figura abaixo.\n",
+        "\n",
+        "\n",
+        "![Operações de Comparação](https://firebasestorage.googleapis.com/v0/b/aulas-python-2019.appspot.com/o/operacao_comparacao.png?alt=media&token=a753cbf2-bd1a-47ec-b530-4a11edf14c37)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "rt76ozQmYYde"
+      },
+      "source": [
+        "Comparações são um pouco inteligentes..."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GUngHJfqYbC5",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "455ef71c-5360-4af2-a389-a465f92b49de"
+      },
+      "source": [
+        "3.0 == 3"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "True"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kdwkk9DkYc0M"
+      },
+      "source": [
+        "Mas não muito inteligente ..."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_iwPSiKwYedp",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "6342ea58-32dc-45d0-f9aa-20206f9bcd18"
+      },
+      "source": [
+        "'3' == 3"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "False"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 12
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "oC31JMwaFzdZ"
+      },
+      "source": [
+        "Uma outra característica marcante de Python é: a definição dos limites do início e fim dos blocos if e else são feitas com **indentação**. Sempre que andamos espaços para a direita, estamos definindo um novo bloco. Já quando voltamos os espaços, significa que aquele bloco terminou."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5Mpw1JO7KTSH"
+      },
+      "source": [
+        "Assim como em outras linguagens de programação, também temos definidos os outros elementos como: `elif` (a diante na aula) e `else` . Quando a condição do `if` no for verdadeira, temos a contra medida, ou seja, a instrução executada numa ação de falsidade (`else`). Repare que o corpo dos blocos das condicionais encontra-se espaços depois do canto esquerdo."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "RdbKMXlQF0DD",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "e17c974d-0495-4702-e88d-24a0437e936b"
+      },
+      "source": [
+        "if media >= 6.0:\n",
+        "  print('aprovado')\n",
+        "else: \n",
+        "  print('reprovado')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "reprovado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "EUFFMGzQmL5z"
+      },
+      "source": [
+        "***ANSI (ESCAPE SEQUENCE)***\n",
+        "\n",
+        "Você já utilizou diversas vezes este padrão, por exemplo, quebra de linha (\\n), tabulação (\\t) entre outros.\n",
+        "\n",
+        "Agora, vamos colorir nossas impressões na tela utilizando um escape sequence?\n",
+        "Para tanto, basta utilizar o comando:\n",
+        "\n",
+        "***`\\033[__m`*** antes do texto a ser impresso.\n",
+        "\n",
+        "Veja alguns exemplos com as cores que podemos utilizar."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('\\033[0;30;41m olá \\33[m')\n",
+        "print('\\033[4;33;44m olá')\n",
+        "print('\\033[1;35;43m olá \\33[m') #tira a formatação após o texto\n",
+        "print('\\033[30;42m olá')\n",
+        "print('\\033[m olá')\n",
+        "print('\\033[7;30m olá \\33[m') # 7 inverte as cores\n",
+        "\n",
+        "a = 5\n",
+        "b = 7\n",
+        "print('Os valores são \\33[31m {} \\33[m e \\33[32m {} \\33[m !!!'.format(a, b))\n",
+        "\n",
+        "nome =  'Matheus'\n",
+        "print('muito prazer em te conhecer, {}{}{}!!!'.format('\\33[30m', nome, '\\33[m'))\n",
+        "\n",
+        "nome =  'Matheus'\n",
+        "cores = {'limpa': '\\33[m',\n",
+        "         'azul': '\\33[34m',\n",
+        "         'amarelo': '\\33[33m',\n",
+        "         'preto/branco': '\\33[7;30m'}\n",
+        "print('muito prazer em te conhecer, {}{}{}!!!'.format(cores['azul'], nome, cores['limpa']))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wmWO-178ard9",
+        "outputId": "e6ed26c6-d2f3-4480-9829-0c27e9db7b6e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[0;30;41m olá \u001b[m\n",
+            "\u001b[4;33;44m olá\n",
+            "\u001b[1;35;43m olá \u001b[m\n",
+            "\u001b[30;42m olá\n",
+            "\u001b[m olá\n",
+            "\u001b[7;30m olá \u001b[m\n",
+            "Os valores são \u001b[31m 5 \u001b[m e \u001b[32m 7 \u001b[m !!!\n",
+            "muito prazer em te conhecer, \u001b[30mMatheus\u001b[m!!!\n",
+            "muito prazer em te conhecer, \u001b[34mMatheus\u001b[m!!!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "37GOStQHmv7_",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 171
+        },
+        "outputId": "74c0abde-1f4b-4b55-ffe6-e59faadd3317"
+      },
+      "source": [
+        "print('\\033[30mTexto Branco/Preto')\n",
+        "print('\\033[31mTexto Vermelho')\n",
+        "print('\\033[32mTexto Verde')\n",
+        "print('\\033[33mTexto Amarelo')\n",
+        "print('\\033[34mTexto Azul')\n",
+        "print('\\033[35mTexto Lilás')\n",
+        "print('\\033[36mTexto Azul Claro')\n",
+        "print('\\033[37mTexto Cinza')\n",
+        "print('Texto com a cor padrão?')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\u001b[30mTexto Branco/Preto\n",
+            "\u001b[31mTexto Vermelho\n",
+            "\u001b[32mTexto Verde\n",
+            "\u001b[33mTexto Amarelo\n",
+            "\u001b[34mTexto Azul\n",
+            "\u001b[35mTexto Lilás\n",
+            "\u001b[36mTexto Azul Claro\n",
+            "\u001b[37mTexto Cinza\n",
+            "Texto com a cor padrão?\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "XMNPyQjRpRiI",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "7c952a8b-cf4d-4848-a6a1-83dd80852bd8"
+      },
+      "source": [
+        "print('Texto com a cor padrão?')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Texto com a cor padrão?\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_bA8MBWfnbV2"
+      },
+      "source": [
+        "Para colocarmos estilos no texto, basta adicionar a numeração antes da cor:\n",
+        "\n",
+        "0 - Normal (sem formatação)\n",
+        "\n",
+        "1 - Negrito\n",
+        "\n",
+        "3 - Itálico\n",
+        "\n",
+        "4 - Sublinhado\n",
+        "\n",
+        "***`print('\\033[0;34mTEXTO')`***"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "DXEzwQ_5nPXx",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 86
+        },
+        "outputId": "37b9d11d-7dc6-4158-f470-181f5eb4eeb5"
+      },
+      "source": [
+        "print('\\033[0;34mTexto Azul sem formatação')\n",
+        "print('\\033[1;34mTexto Azul negrito')\n",
+        "print('\\033[3;34mTexto Azul itálico')\n",
+        "print('\\033[4;34mTexto Azul sublinhado')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\u001b[0;34mTexto Azul sem formatação\n",
+            "\u001b[1;34mTexto Azul negrito\n",
+            "\u001b[3;34mTexto Azul itálico\n",
+            "\u001b[4;34mTexto Azul sublinhado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "UxHmbSw5p5dC",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "47a2c1db-9558-44d8-855b-4f5051602eec"
+      },
+      "source": [
+        "print('\\033[1;34mTexto Azul negrito')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\u001b[1;34mTexto Azul negrito\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "rbZT3ZcmqgLd"
+      },
+      "source": [
+        "É importante notar que dentro do mesmo bloco de código, as edições de cores são mantidas. Quando executamos outro bloco, a formatação anterior é perdida. Quando trabalhamos com um programa .py (fora no Jupyter notebook, podemos utilizar os código `\\033[m` ao final da string para finalizar a formatação."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Z2PxA0oqt3FK",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "cf807059-2604-46c9-9a1c-1adc65cb909e"
+      },
+      "source": [
+        "print('\\033[3;34mTexto Azul itálico')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\u001b[3;34mTexto Azul itálico\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "mi-ECXNlp58U",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "ad82f56e-8ec6-4f80-9b42-593e9a4b31fd"
+      },
+      "source": [
+        "print('\\033[4;34mTexto Azul sublinhado')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\u001b[4;34mTexto Azul sublinhado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "VktIqwBQzoHr"
+      },
+      "source": [
+        "Vamos formatar nossa saída?"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "J_7HehL-znmu",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "6be22eb3-d88d-41a1-f474-6daaef6ad511"
+      },
+      "source": [
+        "if media >= 6.0:\n",
+        "  print('\\033[34mAprovado.')\n",
+        "else: \n",
+        "  print('\\033[31mReprovado.')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\u001b[34mAprovado.\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "zKB2PwiLyGmH"
+      },
+      "source": [
+        "## 2.2. Estrutura condicional aninhadas (if/elif/else)\n",
+        "\n",
+        "O `elif` avalia uma outra expressão e é executado caso esta seja avaliada como verdadeira. No caso de nenhuma expressão de `if` ou `elif` ser verdadeira, o bloco do `else` é executado, se existir."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "fDnd_H70Krru",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "be101105-3faf-460a-b92f-f168492bf1f3"
+      },
+      "source": [
+        "if media >= 6:\n",
+        "  print('aprovado')\n",
+        "elif media >= 4:\n",
+        "  print('exame de segunda época')\n",
+        "else:\n",
+        "  print('reprovado')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "aprovado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "37Ayr3qct-yN"
+      },
+      "source": [
+        "Vamos refazer o código anterior, colocando mais estilo em nossa resposta."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KRe-e-3St-QJ",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "7002abc4-0b48-45bc-afc3-ade902821f64"
+      },
+      "source": [
+        "if media >= 6:\n",
+        "  print('\\033[34mAprovado.')\n",
+        "elif media >= 4:\n",
+        "  print('\\033[33mExame de segunda época.')\n",
+        "else:\n",
+        "  print('\\033[31mReprovado.')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\u001b[34mAprovado.\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nome = str(input('Qual é o seu nome? ')).capitalize()\n",
+        "if nome == 'Matheus':\n",
+        "    print('Que nome bonito!!!')\n",
+        "elif nome == 'Pedro' or nome == 'Maria' or nome == 'Paulo':\n",
+        "    print('seu nome é bem popular no Brasil!')\n",
+        "elif nome in ('Natacha Sonia Lidia Rosana'):\n",
+        "    print('Belo nome feminino!')\n",
+        "else:\n",
+        "    print('seu nome é normal (:')\n",
+        "print('Bom dia, {}!'.format(nome))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "P4wBwLcfa_Cq",
+        "outputId": "008568f0-d896-4071-8ada-127d0c04d016"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Qual é o seu nome? matheus\n",
+            "Que nome bonito!!!\n",
+            "Bom dia, Matheus!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "O8Q_drrNLU6c"
+      },
+      "source": [
+        "##2.3. Operadores lógicos"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "W-CiG3wPLxFH"
+      },
+      "source": [
+        "O tipo de dados mais simples é o chamado booleano (ou lógico). Esse tipo de dados, um dado booleano só pode assumir dois valores (VERDADEIRO ou FALSO). Em Python, esse tipo de dado é chamado `bool` e os valores possíves são `True` e `False`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "FJtCpl2DLeuL",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "1093c82a-44f7-4b43-8656-4982f3fbb56e"
+      },
+      "source": [
+        "valor_verdadeiro = True\n",
+        "type(valor_verdadeiro)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "bool"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "yuFsZpnvK9i7",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "ac6e1fe9-965b-4166-ca6f-4a8277f95b01"
+      },
+      "source": [
+        "print(valor_verdadeiro)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "True\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "E-huCTpnMWy6"
+      },
+      "source": [
+        "Em Python, utilizamos a palavra `not` para negar o valor booleano. Veja o exemplo:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KZ0HgHaMMWBg",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "0e6a3901-312f-4c95-f608-565038beef57"
+      },
+      "source": [
+        "print(not valor_verdadeiro)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "False\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ebnvymC7MygP"
+      },
+      "source": [
+        "Quando desejamos comparar diversas expressões dentro de um comando de decisão, podemos utilizar também as palavras chaves `and` e `or`. Vejamos um exemplo para formar a tabela verdade:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "XUFkST89Y_8F",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 188
+        },
+        "outputId": "0f578bb2-8af2-46d9-8166-4116b9beca97"
+      },
+      "source": [
+        "print('True and True:', True and True)\n",
+        "print('True and False:', True and False)\n",
+        "print('False and False:', False and False)\n",
+        "print()\n",
+        "print('True or True:', True or True)\n",
+        "print('True or False:', True or False)\n",
+        "print('False or False:', False or False)\n",
+        "print()\n",
+        "print('not True:', not True)\n",
+        "print('not False:', not False)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "True and True: True\n",
+            "True and False: False\n",
+            "False and False: False\n",
+            "\n",
+            "True or True: True\n",
+            "True or False: True\n",
+            "False or False: False\n",
+            "\n",
+            "not True: False\n",
+            "not False: True\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KdMAvbuHNUMb"
+      },
+      "source": [
+        "valor1 = True\n",
+        "valor2 = False"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "zO6Q3RciMHpM",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "a05ef7ab-1523-41d7-c956-30260b568d7f"
+      },
+      "source": [
+        "if valor1 and valor2:\n",
+        "  print('Verdade') # se ambos forem verdadeiros\n",
+        "else:\n",
+        "  print('Falso') # se um dele já for falso."
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Falso\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "50S8KRdhNFYI",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "6db7be77-924f-4f17-b51c-f08038ab7de7"
+      },
+      "source": [
+        "if valor1 or valor2:\n",
+        "  print('Verdade') # se um deles já for verdadeiro.\n",
+        "else:\n",
+        "  print('Falso') # se ambos forem falsos."
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Verdade\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "DwRu2Oi9OEQV"
+      },
+      "source": [
+        "Dando continuidade ao nosso exemplo de cálculo de média, vamos supor que mais uma variável seja adicionada ao nosso sistema: `quantidade de faltas`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "uqI6HR7FN6N7"
+      },
+      "source": [
+        "quantidade_faltas = 20"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "H9ACY2rLOTNc",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "d3e25220-876f-402b-87fb-7be39acb2f36"
+      },
+      "source": [
+        "if media >= 6.0 and quantidade_faltas <= 20:\n",
+        "  print('aprovado')\n",
+        "elif media >= 4.0 and quantidade_faltas <= 20:\n",
+        "  print('exame de segunda época')\n",
+        "else:\n",
+        "  print('reprovado')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "aprovado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "nota1 = float(input('Digite sua primeira nota: '))\n",
+        "nota2 = float(input('Digite sua seginfa nota: '))\n",
+        "media = (nota1 + nota2) / 2\n",
+        "if media < 5:\n",
+        "    print('\\33[31m Você foi reprovado com média {}'.format(media))\n",
+        "elif 5 < media < 6.9:\n",
+        "    print('\\33[33m Você está de recuperação com média {}'.format(media))\n",
+        "else:\n",
+        "    print('\\33[32m Você foi aprovado com média {}'.format(media))"
+      ],
+      "metadata": {
+        "id": "GfOx2hV_famx"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "BAvUQVOlOjA4",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "78218db3-aec3-4528-807f-4c1c42a10a07"
+      },
+      "source": [
+        "# reestruturando o código utilizando níveis de identação:\n",
+        "if quantidade_faltas <= 20:\n",
+        "  if media >= 6.0:\n",
+        "    print('aprovado')\n",
+        "  elif media >= 4.0:\n",
+        "    print('exame de segunda época')\n",
+        "else:\n",
+        "  print('reprovado')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "aprovado\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kKpFEFqYI2QA"
+      },
+      "source": [
+        "##2.4. Switch/Case"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0VmIkG5uJAUJ",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "260967c0-ed1e-40d6-96e8-2b9de2c9169e"
+      },
+      "source": [
+        "print('\\033[2;31mNão tem! :-)')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\u001b[2;31mNão tem! :-)\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "tFVnfoiTPUIV"
+      },
+      "source": [
+        "##2.5. Exercício Resolvido: Cálculo do IMC\n",
+        "\n",
+        "Vamos desenvolver um código que seja capaz de, dada a altura e peso de uma pessoa, calcular o seu IMC (Índice de Massa Corporal) e indicar sua situação. O cálculo do IMC é feito pela divisão do peso pela altura ao quadrado. As possíveis situações são:\n",
+        "\n",
+        " - Abaixo de 17.      Muito abaixo do peso\n",
+        " - Entre 17 e 18,49\t Abaixo do peso\n",
+        " - Entre 18,5 e 24,99 Peso normal\n",
+        " - Entre 25 e 29,99\t Acima do peso\n",
+        " - Entre 30 e 34,99\t Obesidade I\n",
+        " - Entre 35 e 39,99\t Obesidade II (severa)\n",
+        " - Acima de 40\t       Obesidade III (mórbida)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "kLu80PYxVuL8"
+      },
+      "source": [
+        "peso = float(input('Digite seu peso: '))\n",
+        "altura = float(input('Digite sua altura: '))\n",
+        "\n",
+        "imc = peso / (altura * altura)\n",
+        "imc = round(imc, 2)\n",
+        "\n",
+        "print(imc, end=' ')\n",
+        "\n",
+        "if imc < 17:\n",
+        "  print('Muito abaixo do peso')\n",
+        "elif imc < 18.5:\n",
+        "  print('Abaixo do peso')\n",
+        "elif imc < 25:\n",
+        "  print('Peso normal')\n",
+        "elif imc < 30:\n",
+        "  print('Acima do peso')\n",
+        "elif imc < 35:\n",
+        "  print('Obesidade I')\n",
+        "elif imc < 40:\n",
+        "  print('Obesidade II (severa)')\n",
+        "else:\n",
+        "  print('Obesidade III (mórbida)')\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fVzxciCZea46"
+      },
+      "source": [
+        "##2.6. Exercícios"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "c = float(input('Digite a temperatura em °c: '))\n",
+        "print('a temperatura em °c é: {},a temperatura em °f é: {}'.format(c, ((9 * c) / 5) + 32))"
+      ],
+      "metadata": {
+        "id": "LMYsMBWCbe3a"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "lK34zdC6fLJE"
+      },
+      "source": [
+        "### 2.6.1. Exercício 1: Faça um programa em que ele sorteie um número entre 0 e 5. O usuário deverá então adivinhar este número e o programa deverá escrever na tela se ele acertou ou não."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LjnarQW20bAa",
+        "outputId": "64db2cb4-9054-48f9-9784-053ac2a7d1f6"
+      },
+      "source": [
+        "from random import randint\n",
+        "computador = randint (0,5)\n",
+        "print('pensei no número: {}'.format(computador))\n",
+        "print('--' * 30)\n",
+        "print('Vou pensar em um número entre 0 e 5. Adivinhe')\n",
+        "print('--' * 30)\n",
+        "adivinha = int(input('Adivinhe um número entre 0 e 5: '))\n",
+        "if computador == adivinha:\n",
+        "  print('\\033[32m Você acertou!')\n",
+        "else:\n",
+        "  print('\\033[31m Você errou!')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "pensei no número: 1\n",
+            "------------------------------------------------------------\n",
+            "Vou pensar em um número entre 0 e 5. Adivinhe\n",
+            "------------------------------------------------------------\n",
+            "Adivinhe um número entre 0 e 5: 1\n",
+            "\u001b[32m Você acertou!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "5xASByOUgIuR"
+      },
+      "source": [
+        "### 2.6.2. Exercício 2: Crie um programa que leia um número inteiro e mostre na tela se ele é par ou ímpar."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ra4qlPmO37TD",
+        "outputId": "e186695b-0278-457a-b851-01fc4279a2c2"
+      },
+      "source": [
+        "num = int(input('Digite um número: '))\n",
+        "if num % 2 == 0:\n",
+        "  print('\\33[34m o número {} é par'.format(num))\n",
+        "else: \n",
+        "  print('\\33[35m o número {} é impar'.format(num))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite um número: 7\n",
+            "\u001b[35m o número 7 é impar\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "vosNGm5BfaQD"
+      },
+      "source": [
+        "### 2.6.3. Exercício 3: Escreva um programa que leia a velocidade de um carro. Se esta velocidade for maior que 80Km/h o programa deverá escrever uma mensagem na tela avisando que o usuário levou uma multa e o valor a ser pago. Considere R$ 7 reais por cada Km acima do limite."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0mShWed06Qqj",
+        "outputId": "79a62f8e-f398-4fb7-9430-c395e269a6ea"
+      },
+      "source": [
+        "velocidade = int(input('Digite sua velocidade: '))\n",
+        "if velocidade > 80:\n",
+        "  multa = (velocidade - 80) * 7\n",
+        "  limite = velocidade - 80\n",
+        "  print('\\33[32m Você utrapassou o limite de velocidade em {}, e terá que pagar {} R$'.format(limite,multa))\n",
+        "else: \n",
+        "  print('\\33[33m Tenha uma boa viagem')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite sua velocidade: 120\n",
+            "\u001b[32m Você utrapassou o limite de velocidade em 40, e terá que pagar 280 R$\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "CQlkVZWxf8v4",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        },
+        "outputId": "15be0dd1-2ce3-4afc-fd48-589ba3e93e79"
+      },
+      "source": [
+        "dis = int(input('Digite a distância em km da viagem: '))\n",
+        "# preco = dis * 0.50 if dis <= 200 else dis * 0.45\n",
+        "if dis <= 200:\n",
+        "    print('O valor a ser pago é {}, para uma viagem de {} km'.format(dis*0.50, dis))\n",
+        "else:\n",
+        "    print('O valor a ser pago é {}, para uma viagem de {} km'.format(dis * 0.45, dis))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Digite a velocidade: 85\n",
+            "Você levou uma multa de R$ 35\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# verificando se o ano é bissexto \n",
+        "'''from calendar import isleap\n",
+        "ano = int(input('Digite um ano: '))\n",
+        "if isleap(ano):\n",
+        "    print('o ano é bissexto')\n",
+        "else:\n",
+        "    print('não é um ano bissexto')'''\n",
+        "from datetime import date\n",
+        "ano = int(input('Que ano que analisar? Digite 0 para o ano atual: '))\n",
+        "print('Vamos ver se o ano é BISSEXTO')\n",
+        "if ano == 0:\n",
+        "    ano = date.today().year\n",
+        "if ano % 4 == 0 and ano % 100 != 0 or ano % 400 == 0:\n",
+        "    print('O ano de {} é  BISSEXTO '. format(ano))\n",
+        "else:\n",
+        "    print('O ano de {} não é BISSEXTO '.format(ano))"
+      ],
+      "metadata": {
+        "id": "FjRFGR_leKnV"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6uWVM2ZEgODD"
+      },
+      "source": [
+        "### 2.6.4. Exercício 4: Crie um programa que calcule o preço a ser pago por um serviço computacional. O usuário deverá informar a quantidade de horas utilizada. Será cobrado `R$ 0,50` por hora para consumo de até 10 horas, `R$ 0,45` por hora para consumo entre 10 e 20 horas e `R$ 0,40` por hora para consumo maior de 20 horas."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "bhFzfmzBg-tw",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        },
+        "outputId": "5bfc19a3-4478-40b8-a412-a3c1871a7276"
+      },
+      "source": [
+        "horas = int(input('Digite a quantidade de horas utilizada: '))\n",
+        "\n",
+        "if horas <= 10:\n",
+        "  total_gasto = horas * 0.50\n",
+        "elif horas <= 20:\n",
+        "  total_gasto = horas * 0.45\n",
+        "else:\n",
+        "  total_gasto = horas * 0.40\n",
+        "  \n",
+        "print('Total gasto: {}'.format(total_gasto))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Digite a quantidade de horas utilizada: 11\n",
+            "Total gasto: 4.95\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KqOT49B0jl7q"
+      },
+      "source": [
+        "### 2.6.5. Exercício 5: Faça um programa que leia 3 números e mostre qual é o maior e qual é o menor (não utilize as funções built-in max() e min())"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "towiutid_-hj",
+        "outputId": "8eb760be-a928-4f1a-f5a7-34a2b03f89ff"
+      },
+      "source": [
+        "num1 = int(input('Digite o primeiro número: '))\n",
+        "num2 = int(input('Digite o segundo número: '))\n",
+        "num3 = int(input('Digite o terceiro número: '))\n",
+        "if num1 > num2 and num1 > num3:\n",
+        "  print('O número maior é: {}'.format(num1))\n",
+        "elif num2 > num3:\n",
+        "  print('O número maior é: {}'.format(num2))\n",
+        "else: \n",
+        "  print('O número maior é: {}'.format(num3))\n",
+        "\n",
+        "if num1 < num2 and num1 < num3:\n",
+        "  print('O número menor é: {}'.format(num1))\n",
+        "elif num2 < num3:\n",
+        "  print('O número menor é: {}'.format(num2))\n",
+        "else: \n",
+        "  print('O número menor é: {}'.format(num3))\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o primeiro número: 10\n",
+            "Digite o segundo número: 15\n",
+            "Digite o terceiro número: 25\n",
+            "O número maior é: 25\n",
+            "O número menor é: 10\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7KXUowzUBL-E",
+        "outputId": "d832f077-7470-497e-8d98-47a2097a19e7"
+      },
+      "source": [
+        "num1 = int(input('Digite o primeiro número: '))\n",
+        "num2 = int(input('Digite o segundo número: '))\n",
+        "num3 = int(input('Digite o terceiro número: '))\n",
+        "print('o maior número é: ', max(num1,num2,num3))\n",
+        "print('o menor número é: ', min(num1,num2,num3))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o primeiro número: 2\n",
+            "Digite o segundo número: 3\n",
+            "Digite o terceiro número: 7\n",
+            "o menor núemro é:  7\n",
+            " o maior número é:  2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ScGt7O41juFk"
+      },
+      "source": [
+        "### 2.6.6. Exercício 6: Escreva um programa que leia o salário de um funcionário e calcule o seu aumento. Caso o salário atual seja superior a `R$ 1.000,00` calcule um aumento de 10%, caso contrário, calcule um aumento de 15%."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "An_8rOrnkAYA",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        },
+        "outputId": "234b87a7-9ad3-4e28-9eea-2369ca9f46a1"
+      },
+      "source": [
+        "salario = float(input('Digite seu salário: '))\n",
+        "\n",
+        "if salario > 1000:\n",
+        "  novo_salario = salario * 1.10\n",
+        "else:\n",
+        "  novo_salario = salario * 1.15\n",
+        "  \n",
+        "print('Salário atualizado: {}'.format(novo_salario))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Digite seu salário: 1000\n",
+            "Salário atualizado: 1150.0\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_Q6VwWG3kJBe"
+      },
+      "source": [
+        "### 2.6.7. Exercício 7: ***Condição de existência de um triângulo***: Para construir um triângulo não podemos utilizar qualquer medida, tem que seguir a condição de existência, isto é, para construir um triângulo é necessário que a medida de qualquer um dos lados seja menor que a soma das medidas dos outros dois e maior que o valor absoluto da diferença entre essas medidas [[Brasil Escola, 2019](https://brasilescola.uol.com.br/matematica/triangulo.htm)].\n",
+        "\n",
+        "| b - c | < a < b + c\n",
+        "\n",
+        "| a - c | < b < a + c\n",
+        "\n",
+        "| a - b | < c < a + b\n",
+        "\n",
+        "Com base nesta condição, crie um programa que leia o comprimento de três retas e escreva na tela se estas retas podem ou não formar um triângulo."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0XVtTOcCk_jf",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 86
+        },
+        "outputId": "a525bb00-446f-44fe-9936-cc9c625e2c2e"
+      },
+      "source": [
+        "a = float(input('Digite o comprimento 1: '))\n",
+        "b = float(input('Digite o comprimento 2: '))\n",
+        "c = float(input('Digite o comprimento 3: '))\n",
+        "\n",
+        "condicao1 = abs(b - c) < a < b + c\n",
+        "condicao2 = abs(a - c) < b < a + c\n",
+        "condicao3 = abs(a - b) < c < a + b\n",
+        "\n",
+        "if condicao1 and condicao2 and condicao3:\n",
+        "  print('forma um triângulo')\n",
+        "else:\n",
+        "  print('não forma um triângulo')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Digite o comprimento 1: 2\n",
+            "Digite o comprimento 2: 2\n",
+            "Digite o comprimento 3: 1\n",
+            "forma um triângulo\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "V39J6eclA5le"
+      },
+      "source": [
+        "### 2.6.8. Exercício 8: Faça um programa para aprovar o empréstimo bancário para a compra de uma casa. O usuário deverá informar o valor da casa, a quantidade de parcelas que deseja pagar e seu salário. O empréstimo deverá ser negado caso o valor da parcela exceda 30% do salário."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "RfnFPzygBYfr",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 86
+        },
+        "outputId": "e0ce218f-aa1b-4ab3-e3b1-af5ef0c42bec"
+      },
+      "source": [
+        "valorCasa = float(input('Qual o valor da casa: '))\n",
+        "salario = float(input('Digite seu salário: '))\n",
+        "parcelas = int(input('Digite a quantidade de anos que deseja para o financiamento: ')) * 12\n",
+        "\n",
+        "print('Valor das parcelas: {}'.format(valorCasa/parcelas))\n",
+        "if valorCasa / parcelas > salario * 0.3:\n",
+        "    print('\\33[31m empréstimo negado, sinto muito!')\n",
+        "else:\n",
+        "    print('\\33[32m Parabéns, empréstimo aprovado!!!')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Digite o valor da casa: 1000\n",
+            "Digite a quantidade de parcelas: 2\n",
+            "Digite seu salário: 400\n",
+            "empréstimo negado!\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "sUac_6Z5H4yI"
+      },
+      "source": [
+        "### 2.6.9. Exercício 9: Escreva um programa que leia dois números inteiros e compare-os, mostrando na tela uma das mensagens:\n",
+        "\n",
+        " - O `primeiro valor` é maior.\n",
+        " - O `segundo valor` é maior.\n",
+        " - Os valores são iguais."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yl-oK-dYHTn_",
+        "outputId": "232340eb-9869-4116-ee81-ace0d5b2dec9"
+      },
+      "source": [
+        "a = int(input('Digite um número: '))\n",
+        "b = int(input('Digite outro número: '))\n",
+        "if a > b:\n",
+        "  print('{} é o maior valor'. format(a))\n",
+        "elif b > a:\n",
+        "  print('{} é o maior valor'. format(b))\n",
+        "else:\n",
+        "  print('Os valores são iguais')"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite um número: 5\n",
+            "Digite outro número: 5\n",
+            "Os valores são iguais\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "axsnPeLxJ4j-"
+      },
+      "source": [
+        "### 2.6.10. Exercício 10: Faça um program que leia o ano de nascimento de uma pessoa e informe se ele ainda vai se alistar ao serviço militar ou se ele está no período de se alistar ou se ele perdeu o prazo para se alistar. Além disso, mostre também a quantidade de anos que falta para se alistar ou que passou do prazo."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from datetime import date\n",
+        "anoAtual = date.today().year\n",
+        "anoNasc = int(input('Digite seu ano de nascimento: '))\n",
+        "idade = anoAtual - anoNasc\n",
+        "if idade == 18:\n",
+        "    print('Está na hora de se alistar!!')\n",
+        "elif idade > 18:\n",
+        "    print('Passou do tempo de alistamento em {} anos'.format(idade - 18))\n",
+        "    print('Seu alistamento foi em {}'.format(anoAtual-(idade-18)))\n",
+        "else:\n",
+        "    print('Falta {} anos para se alistar'.format(18 - idade))\n",
+        "    print('Seu alistamento será em {}'.format(anoNasc + 18))"
+      ],
+      "metadata": {
+        "id": "B_mg6mw1fJ98"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "t4RImt4iKX8L"
+      },
+      "source": [
+        "### 2.6.11. Exercício 11: Faça um programa que leia o comprimento de três lados de um triângulo (válido), indicando que tipo de triângulo será formado:\n",
+        "\n",
+        "- Equilátero: todos os lados são iguais; ou\n",
+        "- Isósceles: dois lados são iguais; ou \n",
+        "- Escaleno: todos os lados são diferentes."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NnMNGrqwLLqk"
+      },
+      "source": [
+        "lado1 = int(input('Digite o comprimento do primeiro lado'))\n",
+        "lado2 = int(input('Digite o comprimento do segundo lado'))\n",
+        "lado3 = int(input('Digite o comprimento do terceiro lado'))\n",
+        "\n",
+        "if lado1 == lado2 and lado1 == lado3:\n",
+        "  print('Triângulo Equilátero')\n",
+        "elif lado1 == lado2 or lado1 == lado3 or lado2 == lado3:\n",
+        "  print('Triângulo Isósceles')\n",
+        "else:\n",
+        "  print('Triângulo Escaleno')"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Oq5FW1AILMI6"
+      },
+      "source": [
+        "### 2.6.12. Exercício 12: Crie um programa que calcule o valor a ser pago por um produto considerando o seu `preço normal` e a `condição de pagamento`:\n",
+        "\n",
+        " - à vista no dinheiro ou cheque: 10% de desconto;\n",
+        " - à vista no cartão: 5% de desconto;\n",
+        " - em até 2x no cartão: preço normal;\n",
+        " - em 3x no cartão: 20% de juros."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "JLYm1RbZL-Jw"
+      },
+      "source": [
+        "valor_produto = float(input('Digite o valor do produto: '))\n",
+        "condicao_pagamento = int(input('Digite a condição de pagamento: '))\n",
+        "\n",
+        "if condicao_pagamento == 0:\n",
+        "  print(valor_produto * 0.90)\n",
+        "elif condicao_pagamento == 1:\n",
+        "  print(valor_produto * 0.95)\n",
+        "elif condicao_pagamento == 2:\n",
+        "  print(valor_produto)\n",
+        "elif condicao_pagamento == 3:\n",
+        "  print(valor_produto * 1.20)\n",
+        "else:\n",
+        "  print('condição inválida')"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# conversão de números\n",
+        "num = int(input('Digite um número decimal inteiro: '))\n",
+        "print('''escolha umas das opções para conversão\n",
+        "[1] converter para binário\n",
+        "[2] converter para octal\n",
+        "[3] converter para binário''')\n",
+        "opcao = int(input('escolha uma das opções: '))\n",
+        "if opcao == 1:\n",
+        "    print('o número {}, em binário é {}'.format(num, bin(num)[2:])) # fatiamento\n",
+        "elif opcao == 2:\n",
+        "    print('o número {}, em octal é {}'.format(num, oct(num)[2:]))\n",
+        "elif opcao == 3:\n",
+        "    print('o número {}, em hexadecimal é {}'.format(num, hex(num)[2:]))\n",
+        "else:\n",
+        "    print('opção inválida!')"
+      ],
+      "metadata": {
+        "id": "8kg3oBSCe0Z8",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "950cee4e-a080-4085-e642-43a01b2bb944"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite um número decimal inteiro: 5\n",
+            "escolha umas das opções para conversão\n",
+            "[1] converter para binário\n",
+            "[2] converter para octal\n",
+            "[3] converter para binário\n",
+            "escolha uma das opções: 1\n",
+            "o número 5, em binário é 101\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "hOfng9fpL_cx"
+      },
+      "source": [
+        "### 2.6.13. Exercício 13: Faça um programa para jogar Jokenpô (clássico pedra, papel e tesoura) com você. Você deverá informar uma das opções, o programa deverá então sortear uma das três opções possíveis e mostrar quem ganhou na tela."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZMcLHlVLMefE",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "cc5775ff-223d-4b93-efbb-50d92e4a2e20"
+      },
+      "source": [
+        "from random import randint\n",
+        "itens = ('Pedra', 'Papel', 'Tesoura')\n",
+        "computador = randint(0,2)\n",
+        "print('o computador escolheu: {}'.format(itens[computador]))\n",
+        "print('suas opções [0] pedra, [1] papel, [2] tesoura')\n",
+        "jogador = int(input('Qual sua jogada: '))\n",
+        "print('o jogador escolheu: {}'.format(itens[jogador]))\n",
+        "\n",
+        "if computador == 0:\n",
+        "  if jogador == 0:\n",
+        "    print('Empate')\n",
+        "  elif jogador == 1:\n",
+        "    print('jogador ganhou')\n",
+        "  elif jogador == 2:\n",
+        "    print('computador ganhou')\n",
+        "elif computador == 1:\n",
+        "  if jogador == 0:\n",
+        "    print('computador venceu')\n",
+        "  elif jogador == 1:\n",
+        "    print('Empate')\n",
+        "  elif jogador == 2:\n",
+        "    print('Jogador ganhou')\n",
+        "elif computador == 2:\n",
+        "  if jogador == 0:\n",
+        "    print('Jogador ganhou')\n",
+        "  elif jogador == 1:\n",
+        "    print('computador venceu')\n",
+        "  elif jogador == 2:\n",
+        "    print('empate')\n",
+        "\n",
+        "\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "o computador escolheu: Tesoura\n",
+            "suas opções [0] pedra, [1] papel, [2] tesoura\n",
+            "Qual sua jogada: 2\n",
+            "o jogador escolheu: Tesoura\n",
+            "empate\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
