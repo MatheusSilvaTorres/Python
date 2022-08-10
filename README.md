@@ -1,1 +1,1 @@
-# Exercícios desenvolvidos em sala/curso em vídeo.
+# Exercícios desenvolvidos em sala/curso em vídeo💻.
